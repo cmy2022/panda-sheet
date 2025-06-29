@@ -1,6 +1,6 @@
-# univer-sheet-start-kit
+# panda-sheet-start-kit
 
-This template can help you get started with using the Univer API, and you can use the code inside to create useful applications.
+This template can help you get started with using the Panda API, and you can use the code inside to create useful applications.
 
 ## Use Cases
 
