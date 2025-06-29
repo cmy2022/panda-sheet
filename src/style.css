@@ -7,12 +7,12 @@ body {
 }
 
 :root {
-  --toolbar-height: 100px;
+  --toolbar-height: 38px;
 }
 
 #app {
   height: 100%;
-  padding: 24px;
+  padding: 12px;
   box-sizing: border-box;
 }
 
