@@ -9,6 +9,12 @@ export default antfu({
     markdown: 'prettier',
   },
   rules: {
+    'no-console': [
+      'error',
+      {
+        allow: ['warn', 'error', 'log'],
+      },
+    ],
     // 'perfectionist/sort-imports': 'warn',
     'perfectionist/sort-named-exports': 'warn',
     'sort-imports': [
