@@ -1,9 +1,9 @@
 {
-  "name": "univer-sheet-start-kit",
+  "name": "panda-sheet-start-kit",
   "type": "module",
   "version": "0.8.1",
   "private": true,
-  "description": "A starter kit for Univer Sheet",
+  "description": "A starter kit for Panda Sheet",
   "scripts": {
     "prepare": "simple-git-hooks",
     "dev": "vite --host",
