@@ -6,7 +6,7 @@ import axios from 'axios'
 // Or use another settings like below:
 // const axiosApi = axios.create({baseURL: 'https://localhost:8980',});
 
-export function setupData(univerAPI: FUniver) {
+export function setupDataExamples(univerAPI: FUniver) {
   const activeWorkbook = univerAPI.getActiveWorkbook()
   if (!activeWorkbook)
     throw new Error('activeWorkbook is not defined')
@@ -62,6 +62,10 @@ export function setupData(univerAPI: FUniver) {
 
   // n、cancel workbook edit
   activeWorkbook.setEditable(false)
+}
+
+export function setupData(univerAPI: FUniver) {
+
 }
 
 async function getDataByFetch(params: JSON) {
