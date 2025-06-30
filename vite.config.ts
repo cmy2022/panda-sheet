@@ -13,6 +13,11 @@ export default ({ mode }) => {
           changeOrigin: true,
           rewrite: path => path,
         },
+        '/universer-api': {
+          target: 'http://localhost:8980',
+          changeOrigin: true,
+          rewrite: path => path,
+        },
       },
     },
     plugins: [
