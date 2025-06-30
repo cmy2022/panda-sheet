@@ -7,7 +7,7 @@ function main() {
   const univerAPI = setupUniver()
   window.univerAPI = univerAPI
   setupToolbar(univerAPI)
-  setupData(univerAPI)
+  // etupData(univerAPI);
 }
 
 main()

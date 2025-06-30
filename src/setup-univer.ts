@@ -40,7 +40,6 @@ import '@univerjs/presets/lib/styles/preset-sheets-sort.css'
 
 export function setupUniver() {
   const universerEndpoint = window.location.host
-
   const collaboration = undefined
 
   const { univerAPI, univer } = createUniver({
@@ -77,7 +76,7 @@ export function setupUniver() {
       UniverSheetsAdvancedPreset({
         useWorker: false,
         // if univer page is not in the same domain as the server, you need to set the following parameters
-        universerEndpoint,
+        // universerEndpoint,  //Annotate this Parameter when request is Cross-Origin.
         // if you want to use the no-limit business feature, you can get 30-day trial license from https://univer.ai/license
         // eslint-disable-next-line node/prefer-global/process
         license: process.env.UNIVER_CLIENT_LICENSE,
