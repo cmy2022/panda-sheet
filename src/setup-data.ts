@@ -1,6 +1,13 @@
 import type { FUniver } from '@univerjs/presets'
 import axios from 'axios'
 
+// Set the base address for interface request.
+axios.defaults.baseURL = 'https://localhost:8980'
+// Or use another settings like below:
+const axiosApi = axios.create({
+  baseURL: 'https://localhost:8980',
+})
+
 export function setupData(univerAPI: FUniver) {
   const activeWorkbook = univerAPI.getActiveWorkbook()
   if (!activeWorkbook)
