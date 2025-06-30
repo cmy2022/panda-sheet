@@ -58,3 +58,50 @@ export function setupData(univerAPI: FUniver) {
   // n、cancel workbook edit
   activeWorkbook.setEditable(false)
 }
+
+async function getDataByFetch(params: JSON) {
+  const response = await fetch('/kpi/datas', {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(params),
+  })
+  if (!response.ok) {
+    throw new Error('Network response was not ok')
+  }
+  const result = await response.json()
+  console.log(result)
+  return result
+}
+
+async function postDataByFetch(data: JSON) {
+  const response = await fetch('/requestURI/methodName', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  })
+  if (!response.ok) {
+    throw new Error('Failed to send data')
+  }
+  const result = await response.json()
+  console.log('Server response:', result)
+}
+
+async function getDataByAxios(params: JSON) {
+  const response = await axios.get('/api/your-get-endpoint', { params })
+  console.log('GET response:', response.data)
+  return response.data
+}
+
+async function sendDataByAxios(data: JSON) {
+  const response = await axios.post('/api/your-post-endpoint', data, {
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+  console.log('POST response:', response.data)
+  return response.data
+}
