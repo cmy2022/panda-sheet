@@ -97,7 +97,8 @@ export function setupUniver() {
     plugins: [
       UniverSheetsCrosshairHighlightPlugin,
       UniverSheetsZenEditorPlugin,
-      [UniverWatermarkPlugin, {
+      /**
+         [UniverWatermarkPlugin, {
         textWatermarkSettings: {
           content: 'Panda',
           fontSize: 24,
@@ -114,6 +115,7 @@ export function setupUniver() {
           opacity: 0.10,
         },
       }],
+       */
     ],
   })
 
