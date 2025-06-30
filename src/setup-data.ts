@@ -65,6 +65,17 @@ export function setupDataExamples(univerAPI: FUniver) {
 }
 
 export function setupData(univerAPI: FUniver) {
+  // 1、数据显示
+
+  // 2、数据控件（日期、下拉框等）
+
+  // 3、文件上传下载接口
+
+  // 4、表格编辑-数据保存
+
+  // 5、数值处理函数
+
+  // 6、BI图表
 
 }
 
