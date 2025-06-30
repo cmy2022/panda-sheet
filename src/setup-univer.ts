@@ -111,7 +111,7 @@ export function setupUniver() {
           spacingX: 190,
           spacingY: 160,
           rotate: -35,
-          opacity: 0.15,
+          opacity: 0.10,
         },
       }],
     ],
