@@ -25,7 +25,9 @@ import { UniverSheetsCrosshairHighlightPlugin } from '@univerjs/sheets-crosshair
 import UniverSheetsCrosshairHighlightEnUS from '@univerjs/sheets-crosshair-highlight/locale/en-US'
 import { UniverSheetsZenEditorPlugin } from '@univerjs/sheets-zen-editor'
 import sheetsZenEditorEnUs from '@univerjs/sheets-zen-editor/locale/en-US'
+import { UniverWatermarkPlugin } from '@univerjs/watermark'
 
+import '@univerjs/watermark/facade'
 import '@univerjs/presets/lib/styles/preset-sheets-core.css'
 import '@univerjs/presets/lib/styles/preset-sheets-advanced.css'
 import '@univerjs/presets/lib/styles/preset-sheets-filter.css'
@@ -95,6 +97,23 @@ export function setupUniver() {
     plugins: [
       UniverSheetsCrosshairHighlightPlugin,
       UniverSheetsZenEditorPlugin,
+      [UniverWatermarkPlugin, {
+        textWatermarkSettings: {
+          content: 'Panda',
+          fontSize: 24,
+          color: 'rgb(0,0,0)',
+          bold: false,
+          italic: false,
+          direction: 'ltr',
+          x: 78,
+          y: 78,
+          repeat: true,
+          spacingX: 190,
+          spacingY: 160,
+          rotate: -35,
+          opacity: 0.15,
+        },
+      }],
     ],
   })
 
