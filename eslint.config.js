@@ -9,6 +9,8 @@ export default antfu({
     markdown: 'prettier',
   },
   rules: {
+    'unused-imports/no-unused-imports': 'off',
+    'unused-imports/no-unused-vars': 'off',
     'no-console': [
       'error',
       {
