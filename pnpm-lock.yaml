@@ -17,6 +17,9 @@ importers:
       '@univerjs/sheets-zen-editor':
         specifier: 0.8.1
         version: 0.8.1(@grpc/grpc-js@1.12.6)(@types/react@19.1.4)(@wendellhu/redi@0.18.3)(react-dom@19.0.0-rc-fb9a90fa48-20240614(react@19.0.0-rc-fb9a90fa48-20240614))(react@19.0.0-rc-fb9a90fa48-20240614)(rxjs@7.8.2)(typescript@5.8.3)
+      '@univerjs/watermark':
+        specifier: 0.8.1
+        version: 0.8.1(@grpc/grpc-js@1.12.6)(@wendellhu/redi@0.18.3)(rxjs@7.8.2)
       axios:
         specifier: ^1.10.0
         version: 1.10.0
@@ -1594,6 +1597,11 @@ packages:
 
   '@univerjs/vite-plugin@0.5.1':
     resolution: {integrity: sha512-WzDeW//YLLOACoAX3p98QJa3GoZQigMUpNxRCn0ONszm9Sep8ilYIItopjVa13i21DjoQC3RhY/3in5YSzL1mQ==}
+
+  '@univerjs/watermark@0.8.1':
+    resolution: {integrity: sha512-8QZEgOy856G56qYHB4hOJr4TJ9LeLHYPCNN5chNZ22pyLPhtl+kDAWOR9Oj2bNwI3EW4JAQ3JKCiP+TCIR0Piw==}
+    peerDependencies:
+      rxjs: '>=7.0.0'
 
   '@vitest/eslint-plugin@1.2.4':
     resolution: {integrity: sha512-4gcw3Kvh1cvwEA1dhPbcwoNmJJXQAaeSiP4UZ8Y9SFdxKuMKrt3moxQ1DLklugjw8S1zhziDp/vPrB3x0UEHKQ==}
@@ -6010,6 +6018,15 @@ snapshots:
       - typescript
 
   '@univerjs/vite-plugin@0.5.1': {}
+
+  '@univerjs/watermark@0.8.1(@grpc/grpc-js@1.12.6)(@wendellhu/redi@0.18.3)(rxjs@7.8.2)':
+    dependencies:
+      '@univerjs/core': 0.8.1(@grpc/grpc-js@1.12.6)(@wendellhu/redi@0.18.3)(rxjs@7.8.2)
+      '@univerjs/engine-render': 0.8.1(@grpc/grpc-js@1.12.6)(@wendellhu/redi@0.18.3)(rxjs@7.8.2)
+      rxjs: 7.8.2
+    transitivePeerDependencies:
+      - '@grpc/grpc-js'
+      - '@wendellhu/redi'
 
   '@vitest/eslint-plugin@1.2.4(eslint@9.28.0)(typescript@5.8.3)':
     dependencies:
