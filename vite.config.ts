@@ -6,6 +6,15 @@ export default ({ mode }) => {
   // eslint-disable-next-line node/prefer-global/process
   const env = loadEnv(mode, process.cwd(), '')
   return defineConfig({
+    server: {
+      proxy: {
+        '/api': {
+          target: 'http://localhost:8980',
+          changeOrigin: true,
+          rewrite: path => path,
+        },
+      },
+    },
     plugins: [
       univerPlugin(),
     ],
