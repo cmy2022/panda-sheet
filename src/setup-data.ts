@@ -1,4 +1,5 @@
 import type { FUniver } from '@univerjs/presets'
+import axios from 'axios'
 
 export function setupData(univerAPI: FUniver) {
   const activeWorkbook = univerAPI.getActiveWorkbook()
