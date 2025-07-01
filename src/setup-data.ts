@@ -80,8 +80,8 @@ export async function setupData(univerAPI: FUniver) {
   if (!activeSheet)
     throw new Error('activeSheet is not defined')
   const values = [
-    ['1', '2', '3'],
-    ['4', '5', '6'],
+    ['0.987600', '0.987600', '0.987600'],
+    ['12345678.9012345', '12345678.9012345', '12345678.9012345'],
   ] // Get datas from backend
   const ranges = activeSheet.getRange(2, 0, values.length, values[0].length)
   if (!ranges)
