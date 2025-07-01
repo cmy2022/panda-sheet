@@ -120,17 +120,17 @@ export function setupUniver() {
     plugins: [
       UniverSheetsCrosshairHighlightPlugin,
       UniverSheetsZenEditorPlugin,
-      UniverFormulaEnginePlugin,
-      UniverRenderEnginePlugin,
-      UniverUIPlugin,
-      UniverDocsPlugin,
-      UniverDocsUIPlugin,
-      UniverSheetsPlugin,
-      UniverSheetsUIPlugin,
-      UniverSheetsFormulaPlugin,
-      UniverSheetsFormulaUIPlugin,
-      UniverSheetsNumfmtPlugin,
-      UniverSheetsNumfmtUIPlugin,
+      // UniverFormulaEnginePlugin,
+      // UniverRenderEnginePlugin,
+      // UniverUIPlugin,
+      // UniverDocsPlugin,
+      // UniverDocsUIPlugin,
+      // UniverSheetsPlugin,
+      // UniverSheetsUIPlugin,
+      // UniverSheetsFormulaPlugin,
+      // UniverSheetsFormulaUIPlugin,
+      // UniverSheetsNumfmtPlugin,
+      // UniverSheetsNumfmtUIPlugin,
       /**
          [UniverWatermarkPlugin, {
         textWatermarkSettings: {
