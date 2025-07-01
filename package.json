@@ -12,6 +12,7 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
+    "@univerjs/core": "0.8.1",
     "@univerjs/presets": "0.8.1",
     "@univerjs/sheets-crosshair-highlight": "0.8.1",
     "@univerjs/sheets-zen-editor": "0.8.1",
