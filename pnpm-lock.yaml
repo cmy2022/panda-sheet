@@ -17,6 +17,9 @@ importers:
       '@univerjs/sheets-crosshair-highlight':
         specifier: 0.8.1
         version: 0.8.1(@grpc/grpc-js@1.12.6)(@types/react@19.1.4)(@wendellhu/redi@0.18.3)(react-dom@19.0.0-rc-fb9a90fa48-20240614(react@19.0.0-rc-fb9a90fa48-20240614))(react@19.0.0-rc-fb9a90fa48-20240614)(rxjs@7.8.2)(typescript@5.8.3)
+      '@univerjs/sheets-data-validation':
+        specifier: 0.8.1
+        version: 0.8.1(@grpc/grpc-js@1.12.6)(@wendellhu/redi@0.18.3)(rxjs@7.8.2)
       '@univerjs/sheets-zen-editor':
         specifier: 0.8.1
         version: 0.8.1(@grpc/grpc-js@1.12.6)(@types/react@19.1.4)(@wendellhu/redi@0.18.3)(react-dom@19.0.0-rc-fb9a90fa48-20240614(react@19.0.0-rc-fb9a90fa48-20240614))(react@19.0.0-rc-fb9a90fa48-20240614)(rxjs@7.8.2)(typescript@5.8.3)
