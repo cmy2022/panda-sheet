@@ -17,15 +17,19 @@ import { UniverSheetsFindReplacePreset } from '@univerjs/presets/preset-sheets-f
 import sheetsFindReplaceEnUs from '@univerjs/presets/preset-sheets-find-replace/locales/en-US'
 import { UniverSheetsHyperLinkPreset } from '@univerjs/presets/preset-sheets-hyper-link'
 import sheetsHyperLinkEnUs from '@univerjs/presets/preset-sheets-hyper-link/locales/en-US'
+import { UniverSheetsNotePreset } from '@univerjs/presets/preset-sheets-note'
+import sheetsNoteZhCN from '@univerjs/presets/preset-sheets-note/locales/zh-CN'
 import { UniverSheetsSortPreset } from '@univerjs/presets/preset-sheets-sort'
 import sheetsSortEnUs from '@univerjs/presets/preset-sheets-sort/locales/en-US'
+import { UniverSheetsTablePreset } from '@univerjs/presets/preset-sheets-table'
+import sheetsTableZhCN from '@univerjs/presets/preset-sheets-table/locales/zh-CN'
 import { UniverSheetsThreadCommentPreset } from '@univerjs/presets/preset-sheets-thread-comment'
 import sheetsThreadCommentEnUs from '@univerjs/presets/preset-sheets-thread-comment/locales/en-US'
 import { UniverSheetsCrosshairHighlightPlugin } from '@univerjs/sheets-crosshair-highlight'
 import UniverSheetsCrosshairHighlightEnUS from '@univerjs/sheets-crosshair-highlight/locale/en-US'
 import { UniverSheetsZenEditorPlugin } from '@univerjs/sheets-zen-editor'
 import sheetsZenEditorEnUs from '@univerjs/sheets-zen-editor/locale/en-US'
-import { UniverWatermarkPlugin } from '@univerjs/watermark'
+import { DEFAULT_WORKBOOK_DATA_DEMO } from './basedata'
 
 import '@univerjs/watermark/facade'
 import '@univerjs/presets/lib/styles/preset-sheets-core.css'
@@ -50,6 +54,8 @@ export function setupUniver() {
       [LocaleType.EN_US]: merge(
         {},
         sheetsCoreEnUs,
+        sheetsNoteZhCN,
+        sheetsTableZhCN,
         sheetsAdvancedEnUs,
         sheetsCollaborationEnUs,
         sheetsThreadCommentEnUs,
@@ -94,7 +100,9 @@ export function setupUniver() {
       UniverSheetsDataValidationPreset(),
       UniverSheetsFilterPreset(),
       UniverSheetsFindReplacePreset(),
+      UniverSheetsNotePreset(),
       UniverSheetsSortPreset(),
+      UniverSheetsTablePreset(),
       UniverSheetsHyperLinkPreset(),
     ],
     plugins: [
@@ -125,15 +133,7 @@ export function setupUniver() {
   // univer.registerPlugin(UniverSheetsChartPlugin)
   // univer.registerPlugin(UniverSheetsChartUIPlugin)
 
-  univer.createUnit(UniverInstanceType.UNIVER_SHEET, {})
-  // Initialize the number of rows and columns.
-  const activeWorkbook = univerAPI.getActiveWorkbook()
-  if (!activeWorkbook)
-    throw new Error('activeWorkbook is not defined')
-  const activeSheet = activeWorkbook.getActiveSheet()
-  if (!activeSheet)
-    throw new Error('activeSheet is not defined')
-  activeSheet.setRowCount(1000)
-  activeSheet.setColumnCount(93)
+  univer.createUnit(UniverInstanceType.UNIVER_SHEET, DEFAULT_WORKBOOK_DATA_DEMO)
+
   return univerAPI
 }
