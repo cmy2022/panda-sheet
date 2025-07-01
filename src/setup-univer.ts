@@ -126,6 +126,14 @@ export function setupUniver() {
   // univer.registerPlugin(UniverSheetsChartUIPlugin)
 
   univer.createUnit(UniverInstanceType.UNIVER_SHEET, {})
-
+  // Initialize the number of rows and columns.
+  const activeWorkbook = univerAPI.getActiveWorkbook()
+  if (!activeWorkbook)
+    throw new Error('activeWorkbook is not defined')
+  const activeSheet = activeWorkbook.getActiveSheet()
+  if (!activeSheet)
+    throw new Error('activeSheet is not defined')
+  activeSheet.setRowCount(1000)
+  activeSheet.setColumnCount(93)
   return univerAPI
 }
