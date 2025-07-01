@@ -6,7 +6,7 @@ import './style.css'
 function main() {
   const univerAPI = setupUniver()
   window.univerAPI = univerAPI
-  setupToolbar(univerAPI)
+  // setupToolbar(univerAPI)
   drawHeaders(univerAPI)
   setupData(univerAPI)
 }

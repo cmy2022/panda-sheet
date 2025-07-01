@@ -7,7 +7,7 @@ body {
 }
 
 :root {
-  --toolbar-height: 38px;
+  --toolbar-height: 0px;
 }
 
 #app {
