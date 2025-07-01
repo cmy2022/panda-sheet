@@ -1,3 +1,7 @@
+import { UniverDocsPlugin } from '@univerjs/docs'
+import { UniverDocsUIPlugin } from '@univerjs/docs-ui'
+import { UniverFormulaEnginePlugin } from '@univerjs/engine-formula'
+import { UniverRenderEnginePlugin } from '@univerjs/engine-render'
 import { createUniver, defaultTheme, LocaleType, LogLevel, merge, UniverInstanceType } from '@univerjs/presets'
 import { UniverSheetsAdvancedPreset } from '@univerjs/presets/preset-sheets-advanced'
 import sheetsAdvancedEnUs from '@univerjs/presets/preset-sheets-advanced/locales/en-US'
@@ -25,10 +29,18 @@ import { UniverSheetsTablePreset } from '@univerjs/presets/preset-sheets-table'
 import sheetsTableZhCN from '@univerjs/presets/preset-sheets-table/locales/zh-CN'
 import { UniverSheetsThreadCommentPreset } from '@univerjs/presets/preset-sheets-thread-comment'
 import sheetsThreadCommentEnUs from '@univerjs/presets/preset-sheets-thread-comment/locales/en-US'
+import { UniverSheetsPlugin } from '@univerjs/sheets'
 import { UniverSheetsCrosshairHighlightPlugin } from '@univerjs/sheets-crosshair-highlight'
 import UniverSheetsCrosshairHighlightEnUS from '@univerjs/sheets-crosshair-highlight/locale/en-US'
+import { UniverSheetsFormulaPlugin } from '@univerjs/sheets-formula'
+import { UniverSheetsFormulaUIPlugin } from '@univerjs/sheets-formula-ui'
+import { UniverSheetsNumfmtPlugin } from '@univerjs/sheets-numfmt'
+import { UniverSheetsNumfmtUIPlugin } from '@univerjs/sheets-numfmt-ui'
+import { UniverSheetsUIPlugin } from '@univerjs/sheets-ui'
 import { UniverSheetsZenEditorPlugin } from '@univerjs/sheets-zen-editor'
 import sheetsZenEditorEnUs from '@univerjs/sheets-zen-editor/locale/en-US'
+import { UniverUIPlugin } from '@univerjs/ui'
+import { UniverWatermarkPlugin } from '@univerjs/watermark'
 import { DEFAULT_WORKBOOK_DATA_DEMO } from './basedata'
 
 import '@univerjs/watermark/facade'
@@ -108,6 +120,17 @@ export function setupUniver() {
     plugins: [
       UniverSheetsCrosshairHighlightPlugin,
       UniverSheetsZenEditorPlugin,
+      UniverFormulaEnginePlugin,
+      UniverRenderEnginePlugin,
+      UniverUIPlugin,
+      UniverDocsPlugin,
+      UniverDocsUIPlugin,
+      UniverSheetsPlugin,
+      UniverSheetsUIPlugin,
+      UniverSheetsFormulaPlugin,
+      UniverSheetsFormulaUIPlugin,
+      UniverSheetsNumfmtPlugin,
+      UniverSheetsNumfmtUIPlugin,
       /**
          [UniverWatermarkPlugin, {
         textWatermarkSettings: {
