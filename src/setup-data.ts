@@ -64,14 +64,14 @@ export function setupDataExamples(univerAPI: FUniver) {
   activeWorkbook.setEditable(false)
 }
 
-export function drawHeaders(univerAPI: FUniver) {
-
-}
-
+/**
+ * 赋值表格数据
+ * @param univerAPI
+ */
 export async function setupData(univerAPI: FUniver) {
   // 1、数据显示
   const params = { nowYear: '2024' }
-  const results = await getDataByAxios(params)
+  // const results = await getDataByAxios(params)
 
   const activeWorkbook = univerAPI.getActiveWorkbook()
   if (!activeWorkbook)
@@ -83,7 +83,7 @@ export async function setupData(univerAPI: FUniver) {
     ['1', '2', '3'],
     ['4', '5', '6'],
   ] // Get datas from backend
-  const ranges = activeSheet.getRange(0, 0, values.length, values[0].length)
+  const ranges = activeSheet.getRange(2, 0, values.length, values[0].length)
   if (!ranges)
     throw new Error('range is not defined')
   ranges.setValues(values)
