@@ -54,7 +54,7 @@ export function setupDataExamples(univerAPI: FUniver) {
   const sheet2 = activeWorkbook.create('Sheet2', 100, 15)
   if (!sheet2)
     throw new Error('sheet2 is not defined')
-    // 8、Set Background Color of Multiple Cells
+  // 8、Set Background Color of Multiple Cells
   const range3 = activeSheet.getRange(0, 0, 2, 3)
   if (!range3)
     throw new Error('range5 is not defined')
@@ -64,9 +64,29 @@ export function setupDataExamples(univerAPI: FUniver) {
   activeWorkbook.setEditable(false)
 }
 
-export function setupData(univerAPI: FUniver) {
-  // 1、数据显示
+export function drawHeaders(univerAPI: FUniver) {
 
+}
+
+export async function setupData(univerAPI: FUniver) {
+  // 1、数据显示
+  const params = { nowYear: '2024' }
+  const results = await getDataByAxios(params)
+
+  const activeWorkbook = univerAPI.getActiveWorkbook()
+  if (!activeWorkbook)
+    throw new Error('activeWorkbook is not defined')
+  const activeSheet = activeWorkbook.getActiveSheet()
+  if (!activeSheet)
+    throw new Error('activeSheet is not defined')
+  const values = [
+    ['1', '2', '3'],
+    ['4', '5', '6'],
+  ] // Get datas from backend
+  const ranges = activeSheet.getRange(0, 0, values.length, values[0].length)
+  if (!ranges)
+    throw new Error('range is not defined')
+  ranges.setValues(values)
   // 2、数据控件（日期、下拉框等）
 
   // 3、文件上传下载接口
@@ -76,10 +96,9 @@ export function setupData(univerAPI: FUniver) {
   // 5、数值处理函数
 
   // 6、BI图表
-
 }
 
-async function getDataByFetch(params: JSON) {
+async function getDataByFetch(params: object) {
   const response = await fetch('/kpi/datas', {
     method: 'GET',
     headers: {
@@ -95,7 +114,7 @@ async function getDataByFetch(params: JSON) {
   return result
 }
 
-async function postDataByFetch(data: JSON) {
+async function postDataByFetch(data: object) {
   const response = await fetch('/requestURI/methodName', {
     method: 'POST',
     headers: {
@@ -110,13 +129,13 @@ async function postDataByFetch(data: JSON) {
   console.log('Server response:', result)
 }
 
-async function getDataByAxios(params: JSON) {
+async function getDataByAxios(params: object) {
   const response = await axios.get('/api/your-get-endpoint', { params })
   console.log('GET response:', response.data)
   return response.data
 }
 
-async function sendDataByAxios(data: JSON) {
+async function sendDataByAxios(data: object) {
   const response = await axios.post('/api/your-post-endpoint', data, {
     headers: {
       'Content-Type': 'application/json',

@@ -70,7 +70,10 @@ export function setupUniver() {
     presets: [
       UniverSheetsCorePreset({
         container: 'univer',
+        ribbonType: 'simple',
         header: true,
+        toolbar: true,
+        footer: false,
       }),
       UniverSheetsDrawingPreset({
         collaboration,
