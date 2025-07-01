@@ -78,6 +78,8 @@ export const DEFAULT_WORKBOOK_DATA_DEMO: IWorkbookData = {
       hidden: 0,
       rowCount: 1000,
       columnCount: 93,
+      defaultColumnWidth: 100,
+      defaultRowHeight: 25,
       cellData: {
         0: {
           0: { s: '1', v: '职能中心' },
