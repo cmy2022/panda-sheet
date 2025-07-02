@@ -8,7 +8,7 @@ export default ({ mode }) => {
   return defineConfig({
     server: {
       proxy: {
-        '/api': {
+        '/kpi': {
           target: 'http://localhost:8980',
           changeOrigin: true,
           rewrite: path => path,
