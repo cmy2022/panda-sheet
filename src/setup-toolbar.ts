@@ -7,7 +7,7 @@ import {
   setupScrollToTop,
   setupSetSelection,
   setupUndo,
-} from './api'
+} from './baseapis/baseapi'
 
 export function setupToolbar(univerAPI: FUniver) {
   const $toolbar = document.getElementById('toolbar')!

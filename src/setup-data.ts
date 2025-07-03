@@ -1,6 +1,6 @@
 import type { FUniver } from '@univerjs/presets'
 import type { FRange } from '@univerjs/sheets/facade'
-import { getDataByAxios, sendDataByAxios } from './api'
+import { getDataByAxios, sendDataByAxios } from './baseapis/baseapi'
 
 // Set the base address for interface request.
 // axios.defaults.baseURL = 'https://localhost:8980'

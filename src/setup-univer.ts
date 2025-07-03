@@ -41,7 +41,7 @@ import { UniverSheetsZenEditorPlugin } from '@univerjs/sheets-zen-editor'
 import sheetsZenEditorEnUs from '@univerjs/sheets-zen-editor/locale/en-US'
 import { UniverUIPlugin } from '@univerjs/ui'
 import { UniverWatermarkPlugin } from '@univerjs/watermark'
-import { DEFAULT_WORKBOOK_DATA_DEMO } from './basedata'
+import { DEFAULT_WORKBOOK_DATA_DEMO } from './basedatas/kpidata'
 
 import '@univerjs/watermark/facade'
 import '@univerjs/presets/lib/styles/preset-sheets-core.css'
