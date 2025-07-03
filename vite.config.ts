@@ -7,6 +7,8 @@ export default ({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
   return defineConfig({
     server: {
+      port: 5173,
+      cors: true,
       proxy: {
         '/kpi': {
           target: 'http://localhost:8980',

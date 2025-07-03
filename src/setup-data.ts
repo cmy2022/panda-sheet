@@ -70,7 +70,6 @@ export function setupDataExamples(univerAPI: FUniver) {
  * @param univerAPI
  */
 export async function setupData(univerAPI: FUniver) {
-  // 1、Datas show.
   // Get parameters from URL.
   const params = new URLSearchParams(window.location.search)
   const nowYear = params.get('year')
@@ -125,13 +124,27 @@ export async function setupData(univerAPI: FUniver) {
   const { permissionId, ruleId } = response
   permission.setRangeProtectionPermissionPoint(unitId, sheetId, permissionId, permission.permissionPointsDefinition.RangeProtectionPermissionEditPoint, false)
 
-  // 2、文件上传下载接口
-
-  // 3、表格编辑-数据保存
-
   // 4、数值处理函数
 
   // 5、BI图表
+}
+
+// Get Datas from database througn backend.
+async function getDataByAxios(params: object) {
+  const response = await axios.get('/kpi/datas', { params })
+  console.log('GET response:', response.data)
+  return response.data
+}
+
+// Save Sheet Data to database thourgh backend.
+async function sendDataByAxios(data: object) {
+  const response = await axios.post('/api/your-post-endpoint', data, {
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+  console.log('POST response:', response.data)
+  return response.data
 }
 
 async function getDataByFetch(params: object) {
@@ -163,20 +176,4 @@ async function postDataByFetch(data: object) {
   }
   const result = await response.json()
   console.log('Server response:', result)
-}
-
-async function getDataByAxios(params: object) {
-  const response = await axios.get('/kpi/datas', { params })
-  console.log('GET response:', response.data)
-  return response.data
-}
-
-async function sendDataByAxios(data: object) {
-  const response = await axios.post('/api/your-post-endpoint', data, {
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  })
-  console.log('POST response:', response.data)
-  return response.data
 }
