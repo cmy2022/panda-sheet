@@ -1,5 +1,6 @@
 import type { FUniver } from '@univerjs/presets'
 import { ScrollToCellCommand } from '@univerjs/presets/preset-sheets-core'
+import axios from 'axios'
 
 export function setupScrollToTop($toolbar: HTMLElement, univerAPI: FUniver) {
   const $button = document.createElement('a')
@@ -120,4 +121,53 @@ export function setupClearStyles($toolbar: HTMLElement, univerAPI: FUniver) {
 
     univerAPI.executeCommand('sheet.command.clear-selection-format')
   })
+}
+
+// Get Datas from database through the backend.
+export async function getDataByAxios(params: object) {
+  const response = await axios.get('/kpi/datas', { params })
+  console.log('GET response:', response.data)
+  return response.data
+}
+
+// Save Sheet Data to database thourgh the backend.
+export async function sendDataByAxios(data: object) {
+  const response = await axios.post('/api/your-post-endpoint', data, {
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+  console.log('POST response:', response.data)
+  return response.data
+}
+
+export async function getDataByFetch(params: object) {
+  const response = await fetch('/kpi/datas', {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(params),
+  })
+  if (!response.ok) {
+    throw new Error('Network response was not ok')
+  }
+  const result = await response.json()
+  console.log(result)
+  return result
+}
+
+export async function postDataByFetch(data: object) {
+  const response = await fetch('/requestURI/methodName', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  })
+  if (!response.ok) {
+    throw new Error('Failed to send data')
+  }
+  const result = await response.json()
+  console.log('Server response:', result)
 }

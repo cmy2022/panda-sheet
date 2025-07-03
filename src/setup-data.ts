@@ -1,6 +1,6 @@
 import type { FUniver } from '@univerjs/presets'
 import type { FRange } from '@univerjs/sheets/facade'
-import axios from 'axios'
+import { getDataByAxios, sendDataByAxios } from './api'
 
 // Set the base address for interface request.
 // axios.defaults.baseURL = 'https://localhost:8980'
@@ -127,53 +127,4 @@ export async function setupData(univerAPI: FUniver) {
   // 4、数值处理函数
 
   // 5、BI图表
-}
-
-// Get Datas from database througn backend.
-async function getDataByAxios(params: object) {
-  const response = await axios.get('/kpi/datas', { params })
-  console.log('GET response:', response.data)
-  return response.data
-}
-
-// Save Sheet Data to database thourgh backend.
-async function sendDataByAxios(data: object) {
-  const response = await axios.post('/api/your-post-endpoint', data, {
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  })
-  console.log('POST response:', response.data)
-  return response.data
-}
-
-async function getDataByFetch(params: object) {
-  const response = await fetch('/kpi/datas', {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(params),
-  })
-  if (!response.ok) {
-    throw new Error('Network response was not ok')
-  }
-  const result = await response.json()
-  console.log(result)
-  return result
-}
-
-async function postDataByFetch(data: object) {
-  const response = await fetch('/requestURI/methodName', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(data),
-  })
-  if (!response.ok) {
-    throw new Error('Failed to send data')
-  }
-  const result = await response.json()
-  console.log('Server response:', result)
 }
